@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/tech-task/static/css/main.57857b70.css",
-    "main.js": "/tech-task/static/js/main.d337c1d4.js",
+    "main.css": "/tech-task/static/css/main.c0147aef.css",
+    "main.js": "/tech-task/static/js/main.0ef74b0a.js",
     "static/js/983.6bed6c59.chunk.js": "/tech-task/static/js/983.6bed6c59.chunk.js",
     "static/js/697.de41584e.chunk.js": "/tech-task/static/js/697.de41584e.chunk.js",
-    "static/js/999.caea4457.chunk.js": "/tech-task/static/js/999.caea4457.chunk.js",
+    "static/js/11.b8088c84.chunk.js": "/tech-task/static/js/11.b8088c84.chunk.js",
     "static/js/134.3268b35d.chunk.js": "/tech-task/static/js/134.3268b35d.chunk.js",
     "static/media/bg-home.jpg": "/tech-task/static/media/bg-home.66f569a773992eba46f6.jpg",
     "index.html": "/tech-task/index.html",
-    "static/media/sprite.svg": "/tech-task/static/media/sprite.9eec0d6c74b650d83cd1a8db0634bb9b.svg",
+    "static/media/sprite.svg": "/tech-task/static/media/sprite.58d724df96799ce4f52b47595d3883ff.svg",
     "static/media/chevron-down.svg": "/tech-task/static/media/chevron-down.24cd320d509ea2ebbeb4.svg",
-    "main.57857b70.css.map": "/tech-task/static/css/main.57857b70.css.map",
-    "main.d337c1d4.js.map": "/tech-task/static/js/main.d337c1d4.js.map",
+    "main.c0147aef.css.map": "/tech-task/static/css/main.c0147aef.css.map",
+    "main.0ef74b0a.js.map": "/tech-task/static/js/main.0ef74b0a.js.map",
     "983.6bed6c59.chunk.js.map": "/tech-task/static/js/983.6bed6c59.chunk.js.map",
     "697.de41584e.chunk.js.map": "/tech-task/static/js/697.de41584e.chunk.js.map",
-    "999.caea4457.chunk.js.map": "/tech-task/static/js/999.caea4457.chunk.js.map",
+    "11.b8088c84.chunk.js.map": "/tech-task/static/js/11.b8088c84.chunk.js.map",
     "134.3268b35d.chunk.js.map": "/tech-task/static/js/134.3268b35d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.57857b70.css",
-    "static/js/main.d337c1d4.js"
+    "static/css/main.c0147aef.css",
+    "static/js/main.0ef74b0a.js"
   ]
 }
