@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/tech-task/static/css/main.7ba093c1.css",
-    "main.js": "/tech-task/static/js/main.84da6d09.js",
+    "main.css": "/tech-task/static/css/main.40a928d1.css",
+    "main.js": "/tech-task/static/js/main.9b928ea6.js",
     "static/js/983.76eec116.chunk.js": "/tech-task/static/js/983.76eec116.chunk.js",
-    "static/js/697.bb379afd.chunk.js": "/tech-task/static/js/697.bb379afd.chunk.js",
-    "static/js/991.26e5dec5.chunk.js": "/tech-task/static/js/991.26e5dec5.chunk.js",
+    "static/js/697.259b6983.chunk.js": "/tech-task/static/js/697.259b6983.chunk.js",
+    "static/js/991.e1d1aa0f.chunk.js": "/tech-task/static/js/991.e1d1aa0f.chunk.js",
     "static/js/134.3268b35d.chunk.js": "/tech-task/static/js/134.3268b35d.chunk.js",
     "static/media/bg-home.jpg": "/tech-task/static/media/bg-home.66f569a773992eba46f6.jpg",
     "index.html": "/tech-task/index.html",
     "static/media/sprite.svg": "/tech-task/static/media/sprite.58d724df96799ce4f52b47595d3883ff.svg",
     "static/media/chevron-down.svg": "/tech-task/static/media/chevron-down.24cd320d509ea2ebbeb4.svg",
-    "main.7ba093c1.css.map": "/tech-task/static/css/main.7ba093c1.css.map",
-    "main.84da6d09.js.map": "/tech-task/static/js/main.84da6d09.js.map",
+    "main.40a928d1.css.map": "/tech-task/static/css/main.40a928d1.css.map",
+    "main.9b928ea6.js.map": "/tech-task/static/js/main.9b928ea6.js.map",
     "983.76eec116.chunk.js.map": "/tech-task/static/js/983.76eec116.chunk.js.map",
-    "697.bb379afd.chunk.js.map": "/tech-task/static/js/697.bb379afd.chunk.js.map",
-    "991.26e5dec5.chunk.js.map": "/tech-task/static/js/991.26e5dec5.chunk.js.map",
+    "697.259b6983.chunk.js.map": "/tech-task/static/js/697.259b6983.chunk.js.map",
+    "991.e1d1aa0f.chunk.js.map": "/tech-task/static/js/991.e1d1aa0f.chunk.js.map",
     "134.3268b35d.chunk.js.map": "/tech-task/static/js/134.3268b35d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ba093c1.css",
-    "static/js/main.84da6d09.js"
+    "static/css/main.40a928d1.css",
+    "static/js/main.9b928ea6.js"
   ]
 }
