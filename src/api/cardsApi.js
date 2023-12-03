@@ -18,7 +18,10 @@ const getSingleCard = async id => {
 
 const addToFavorite = async id => {};
 
-export default {
+const cardsApi = {
   getAllCards,
   getSingleCard,
+  addToFavorite,
 };
+
+export default cardsApi;

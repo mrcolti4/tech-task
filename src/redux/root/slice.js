@@ -1,18 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-
-const handlePending = state => {
-  state.isLoading = true;
-  state.error = null;
-};
-
-const handleFulfilled = state => {
-  state.isLoading = false;
-};
-
-const handleRejected = (state, { payload }) => {
-  state.isLoading = false;
-  state.error = payload;
-};
+import { handleFulfilled, handlePending, handleRejected } from './handlers';
 
 const initialState = {
   isLoading: '',

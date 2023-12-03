@@ -13,6 +13,9 @@ module.exports = {
         modal: ['18px', '24px'],
         tags: ['12px', '18px'],
       },
+      backgroundImage: {
+        home: "url('./components/assets/bg-home.jpg')",
+      },
     },
     colors: {
       primary: '#3470FF',
