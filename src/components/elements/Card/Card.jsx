@@ -37,8 +37,11 @@ const Card = ({ data }) => {
         </div>
         <Heading className="flex justify-between mb-[8px]">
           <div>
-            {data?.make} <span className="text-primary">{data?.model}</span>,{' '}
-            {data?.year}
+            {data?.make}{' '}
+            {data?.model.length < 8 && (
+              <span className="text-primary">{data?.model}</span>
+            )}
+            , {data?.year}
           </div>{' '}
           <span>{data?.rentalPrice}</span>
         </Heading>

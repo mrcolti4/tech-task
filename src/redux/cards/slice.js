@@ -6,6 +6,8 @@ const initialState = {
   data: [],
   singleCard: {},
   page: 1,
+  limit: 12,
+  isNoMoreData: false,
 };
 
 const cardsSlice = createSlice({
