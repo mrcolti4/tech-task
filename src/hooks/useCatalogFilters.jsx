@@ -53,9 +53,9 @@ export const useCatalogFilters = data => {
     }
   }
 
-  const uniqueData = filteredData.filter((item, index, arr) => {
-    arr.indexOf(item) === index;
-  });
+  const uniqueData = filteredData.filter(
+    (item, index, arr) => arr.indexOf(item) === index
+  );
 
   return { data: uniqueData, filters, setFilters };
 };

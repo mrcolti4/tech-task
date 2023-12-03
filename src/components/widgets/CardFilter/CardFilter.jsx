@@ -1,9 +1,9 @@
 import { useForm } from 'react-hook-form';
 
 import brands from '../../../makes.json';
-import Select from 'components/elements/Select/Select';
-import Input from 'components/elements/Input/Input';
-import Label from 'components/elements/Label/Label';
+import Select from 'components/elements/form/Select/Select';
+import Input from 'components/elements/form/Input/Input';
+import Label from 'components/elements/form/Label/Label';
 import Button from 'components/elements/Button/Button';
 
 const CardFilter = ({ setFilters }) => {
@@ -20,7 +20,9 @@ const CardFilter = ({ setFilters }) => {
         <Select register={register('brand')} className="w-[224px] bg-[180px]">
           <option value="">Enter the text</option>
           {brands.map(brand => (
-            <option value={brand}>{brand}</option>
+            <option key={brand} value={brand}>
+              {brand}
+            </option>
           ))}
         </Select>
       </Label>
@@ -29,7 +31,9 @@ const CardFilter = ({ setFilters }) => {
         <Select register={register('price')} className="w-[125px] bg-[80px]">
           <option value="">To: </option>
           {prices.map(price => (
-            <option value={price}>{price}</option>
+            <option key={price} value={price}>
+              {price}
+            </option>
           ))}
         </Select>
       </Label>

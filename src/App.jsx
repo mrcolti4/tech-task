@@ -1,3 +1,4 @@
+import ModalProvider from 'components/elements/ModalContext';
 import Layout from 'components/layouts/Layout';
 import { lazy } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
@@ -32,5 +33,9 @@ export const App = () => {
     }
   );
 
-  return <RouterProvider router={router} />;
+  return (
+    <ModalProvider>
+      <RouterProvider router={router} />
+    </ModalProvider>
+  );
 };

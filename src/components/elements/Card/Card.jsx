@@ -4,9 +4,13 @@ import Heading from '../Heading/Heading';
 import Tag from '../Tag/Tag';
 import Button from '../Button/Button';
 import Favorite from '../Favorite/Favorite';
+import Modal from 'components/widgets/Modal/Modal';
+import { ModalContext } from '../ModalContext';
+import { useContext } from 'react';
 
 const Card = ({ data }) => {
   const [isFavorite, setIsFavorite] = useState(false);
+  const toggleModal = useContext(ModalContext);
 
   const onClick = () => setIsFavorite(!isFavorite);
   const tags = [
@@ -50,7 +54,12 @@ const Card = ({ data }) => {
           ))}
         </div>
       </div>
-      <Button className="w-full">Learn more</Button>
+      <Button
+        onClick={() => toggleModal(<Modal data={data} />)}
+        className="w-full"
+      >
+        Learn more
+      </Button>
     </div>
   );
 };
