@@ -56,11 +56,15 @@ const Modal = ({ data, onClick }) => {
           </ModalTag>
           <ModalTag className="font-secondary">
             Price:{' '}
-            <AccentWord className="font-semibold">{data?.mileage}</AccentWord>
+            <AccentWord className="font-semibold">
+              {data?.mileage.toLocaleString()}
+            </AccentWord>
           </ModalTag>
         </div>
       </ModalParagraph>
-      <Button className="w-[168px]">Rental car</Button>
+      <Button className="w-[168px]">
+        <a href="tel:+380730000000">Rental car</a>
+      </Button>
     </div>
   );
 };
