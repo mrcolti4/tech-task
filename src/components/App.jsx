@@ -1,17 +1,14 @@
-import { useEffect } from 'react';
-import Card from './elements/Card/Card';
-import { useDispatch } from 'react-redux';
-import { getAllCardsThunk } from 'redux/cards/thunks';
-
 export const App = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getAllCardsThunk());
-  }, []);
-
   return (
-    <div>
+    <div className="flex gap-[29px] w-container mx-auto flex-wrap">
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
       <Card />
     </div>
   );
