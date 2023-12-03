@@ -15,6 +15,7 @@ module.exports = {
       },
       backgroundImage: {
         home: "url('./components/assets/bg-home.jpg')",
+        select: "url('./components/assets/chevron-down.svg')",
       },
     },
     colors: {
@@ -30,8 +31,12 @@ module.exports = {
       light: {
         prime: '#fff',
         semi: '#F9F9F9',
+        cloud: '#F7F7FB',
       },
-      gray: '#8A8A89',
+      gray: {
+        20: 'rgba(138, 138, 137, 0.2)',
+        100: '#8A8A89',
+      },
     },
     fontFamily: {
       primary: ['Manrope', 'sans-serif'],

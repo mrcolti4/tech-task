@@ -11,6 +11,12 @@ body {
     'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: rgba(18, 20, 23, 1);
+}
+
+.container {
+  width: 1183px;
+  margin: 0 auto;
 }
 
 code {

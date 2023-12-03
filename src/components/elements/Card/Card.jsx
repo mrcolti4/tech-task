@@ -9,7 +9,6 @@ const Card = ({ data }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const onClick = () => setIsFavorite(!isFavorite);
-
   const tags = [
     ...data?.address.split(',').splice(1),
     data?.rentalCompany,
@@ -51,7 +50,7 @@ const Card = ({ data }) => {
           ))}
         </div>
       </div>
-      <Button>Learn more</Button>
+      <Button className="w-full">Learn more</Button>
     </div>
   );
 };

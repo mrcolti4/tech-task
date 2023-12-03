@@ -1,8 +1,11 @@
 import React from 'react';
 
-const Button = ({ children }) => {
+const Button = ({ children, className, ...props }) => {
   return (
-    <button className="w-full bg-primary text-light-prime py-3 rounded-xl font-semibold hover:bg-secondary transition ease-in duration-150">
+    <button
+      className={`bg-primary text-light-prime py-3 rounded-xl font-semibold hover:bg-secondary transition ease-in duration-150 ${className}`}
+      {...props}
+    >
       {children}
     </button>
   );
