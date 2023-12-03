@@ -18,12 +18,9 @@ const getSingleCard = async id => {
   return data;
 };
 
-const addToFavorite = async id => {};
-
 const cardsApi = {
   getAllCards,
   getSingleCard,
-  addToFavorite,
 };
 
 export default cardsApi;

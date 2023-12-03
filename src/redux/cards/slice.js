@@ -4,6 +4,7 @@ import { handleAllCards, handleSingleCard } from './handlers';
 
 const initialState = {
   data: [],
+  favorites: [],
   singleCard: {},
   page: 1,
   limit: 12,
@@ -20,6 +21,15 @@ const cardsSlice = createSlice({
     resetPage(state) {
       state.page = 1;
     },
+    addToFavorites(state, { payload }) {
+      const index = state.favorites.findIndex(item => item.id === payload.id);
+
+      if (index !== -1) {
+        state.favorites.splice(index, 1);
+      } else {
+        state.favorites.push(payload);
+      }
+    },
   },
   extraReducers: builder =>
     builder
@@ -28,4 +38,4 @@ const cardsSlice = createSlice({
 });
 
 export const cardsReducer = cardsSlice.reducer;
-export const { incrementPage, resetPage } = cardsSlice.actions;
+export const { incrementPage, resetPage, addToFavorites } = cardsSlice.actions;

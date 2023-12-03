@@ -19,6 +19,10 @@ body {
   margin: 0 auto;
 }
 
+.page__section {
+  padding: 150px 0;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

@@ -1,7 +1,11 @@
 import ModalProvider from 'components/elements/ModalContext';
 import Layout from 'components/layouts/Layout';
 import { lazy } from 'react';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import {
+  Navigate,
+  RouterProvider,
+  createBrowserRouter,
+} from 'react-router-dom';
 
 const HomePage = lazy(() => import('pages/HomePage'));
 const FavoritesPage = lazy(() => import('pages/FavoritesPage'));
@@ -24,6 +28,10 @@ export const App = () => {
           {
             path: '/favorites',
             element: <FavoritesPage />,
+          },
+          {
+            path: '*',
+            element: <Navigate to="/" replace />,
           },
         ],
       },

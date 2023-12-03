@@ -1,18 +1,23 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+
+import Modal from 'components/widgets/Modal/Modal';
 
 import Heading from '../Heading/Heading';
 import Tag from '../Tag/Tag';
 import Button from '../Button/Button';
 import Favorite from '../Favorite/Favorite';
-import Modal from 'components/widgets/Modal/Modal';
+
 import { ModalContext } from '../ModalContext';
-import { useContext } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToFavorites } from 'redux/cards/slice';
+import { selectFavorites } from 'redux/cards/selectors';
 
 const Card = ({ data }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
+  const dispatch = useDispatch();
+  const favorites = useSelector(selectFavorites);
+  const isFavorite = favorites.findIndex(item => item.id === data.id) !== -1;
   const toggleModal = useContext(ModalContext);
 
-  const onClick = () => setIsFavorite(!isFavorite);
   const tags = [
     ...data?.address.split(',').splice(1),
     data?.rentalCompany,
@@ -20,6 +25,10 @@ const Card = ({ data }) => {
     data?.model,
     data?.id,
   ];
+
+  const onClick = () => {
+    dispatch(addToFavorites(data));
+  };
 
   return (
     <div className="w-[274px]">
@@ -55,7 +64,9 @@ const Card = ({ data }) => {
         </div>
       </div>
       <Button
-        onClick={() => toggleModal(<Modal data={data} />)}
+        onClick={() =>
+          toggleModal(<Modal data={data} onClick={toggleModal()} />)
+        }
         className="w-full"
       >
         Learn more

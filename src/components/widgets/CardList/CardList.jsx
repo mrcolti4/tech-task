@@ -1,7 +1,6 @@
 import Card from 'components/elements/Card/Card';
-import LoadMore from 'components/elements/LoadMore/LoadMore';
 
-const CardList = ({ error, isLoading, cards, onClick, isNoMoreData }) => {
+const CardList = ({ error, isLoading, cards }) => {
   return (
     <div className="flex gap-x-[29px] gap-y-[50px] w-container mx-auto flex-wrap">
       {isLoading && 'Loading...'}
@@ -11,7 +10,6 @@ const CardList = ({ error, isLoading, cards, onClick, isNoMoreData }) => {
           Something went wrong! <br /> error
         </div>
       )}
-      {!isNoMoreData && <LoadMore onClick={onClick}>Load more</LoadMore>}
     </div>
   );
 };

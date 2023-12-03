@@ -6,13 +6,13 @@ import ModalClose from 'components/elements/modal/ModalClose';
 import ModalParagraph from 'components/elements/modal/ModalParagraph';
 import ModalTag from 'components/elements/modal/ModalTag';
 
-const Modal = ({ data }) => {
+const Modal = ({ data, onClick }) => {
   const { address } = data;
   const addressStr = address?.split(',').slice(1);
 
   return (
     <div className="w-[541px] p-[40px] flex flex-col gap-y-[24px] relative">
-      <ModalClose />
+      <ModalClose onClick={onClick} />
       <img src={data?.img} alt={data?.model} className="rounded-[14px]" />
       <ModalParagraph className="mb-[14px]">
         <Heading className="text-[18px]">
