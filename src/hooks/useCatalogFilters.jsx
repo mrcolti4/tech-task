@@ -35,7 +35,7 @@ export const useCatalogFilters = data => {
   let filteredData = [];
   if (Object.values(filters).every(filter => filter === '')) {
     filteredData = data;
-    return { filteredData, filters, setFilters };
+    return { data: filteredData, filters, setFilters };
   }
 
   for (const filter in copiedFilters) {
@@ -53,5 +53,9 @@ export const useCatalogFilters = data => {
     }
   }
 
-  return { filteredData, filters, setFilters };
+  const uniqueData = filteredData.filter((item, index, arr) => {
+    arr.indexOf(item) === index;
+  });
+
+  return { data: uniqueData, filters, setFilters };
 };

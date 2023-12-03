@@ -7,7 +7,7 @@ import { useLoadMore } from 'hooks/useLoadMore';
 const CatalogPage = () => {
   const { error, isLoading, cards } = useCatalog();
   const { onClick, isNoMoreData } = useLoadMore();
-  const { filteredData, filters, setFilters } = useCatalogFilters(cards);
+  const { data, filters, setFilters } = useCatalogFilters(cards);
 
   return (
     <section className="container">
@@ -15,7 +15,7 @@ const CatalogPage = () => {
       <CardList
         error={error}
         isLoading={isLoading}
-        cards={filteredData}
+        cards={data}
         onClick={onClick}
         isNoMoreData={isNoMoreData}
       />
