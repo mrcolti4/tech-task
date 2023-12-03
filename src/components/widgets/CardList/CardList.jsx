@@ -1,4 +1,4 @@
-import Card from 'components/elements/Card/Card';
+import Card from 'components/widgets/Card/Card';
 
 const CardList = ({ error, isLoading, cards }) => {
   return (

@@ -2,12 +2,12 @@ import { useContext } from 'react';
 
 import Modal from 'components/widgets/Modal/Modal';
 
-import Heading from '../Heading/Heading';
-import Tag from '../Tag/Tag';
-import Button from '../Button/Button';
-import Favorite from '../Favorite/Favorite';
+import Heading from '../../elements/Heading/Heading';
+import Tag from '../../elements/Tag/Tag';
+import Button from '../../elements/Button/Button';
+import Favorite from '../../elements/Favorite/Favorite';
 
-import { ModalContext } from '../ModalContext';
+import { ModalContext } from '../../elements/ModalContext';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToFavorites } from 'redux/cards/slice';
 import { selectFavorites } from 'redux/cards/selectors';
