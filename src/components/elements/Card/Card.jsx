@@ -16,6 +16,7 @@ const Card = ({ data }) => {
   const dispatch = useDispatch();
   const favorites = useSelector(selectFavorites);
   const isFavorite = favorites.findIndex(item => item.id === data.id) !== -1;
+
   const toggleModal = useContext(ModalContext);
 
   const tags = [
@@ -65,7 +66,7 @@ const Card = ({ data }) => {
       </div>
       <Button
         onClick={() =>
-          toggleModal(<Modal data={data} onClick={toggleModal()} />)
+          toggleModal(<Modal data={data} onClick={() => toggleModal()} />)
         }
         className="w-full"
       >

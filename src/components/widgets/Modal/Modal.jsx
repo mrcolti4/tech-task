@@ -11,7 +11,7 @@ const Modal = ({ data, onClick }) => {
   const addressStr = address?.split(',').slice(1);
 
   return (
-    <div className="w-[541px] p-[40px] flex flex-col gap-y-[24px] relative">
+    <div className="w-[541px] p-[40px] flex flex-col gap-y-[24px] absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] bg-light-prime rounded-3xl">
       <ModalClose onClick={onClick} />
       <img src={data?.img} alt={data?.model} className="rounded-[14px]" />
       <ModalParagraph className="mb-[14px]">
@@ -24,7 +24,7 @@ const Modal = ({ data, onClick }) => {
         </Heading>
         <div className="flex flex-wrap w-[277px]">
           {addressStr?.map(str => (
-            <Tag>{str}</Tag>
+            <Tag key={str}>{str}</Tag>
           ))}
           <Tag>Id: {data?.id}</Tag>
           <Tag>Year: {data?.year}</Tag>
@@ -38,7 +38,7 @@ const Modal = ({ data, onClick }) => {
         <Heading className="text-sm">Accessories and functionalities:</Heading>
         <div className="flex flex-wrap">
           {[...data?.accessories, ...data?.functionalities].map(item => (
-            <Tag>{item}</Tag>
+            <Tag key={item}>{item}</Tag>
           ))}
         </div>
       </ModalParagraph>
@@ -46,7 +46,7 @@ const Modal = ({ data, onClick }) => {
         <Heading className="text-sm">Rental Conditions:</Heading>
         <div className="flex flex-wrap gap-[8px]">
           {data?.rentalConditions.split(/(?=[A-Z])/).map(str => (
-            <ModalTag>{str}</ModalTag>
+            <ModalTag key={str}>{str}</ModalTag>
           ))}
           <ModalTag className="font-secondary">
             Mileage:{' '}
