@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCards } from 'redux/cards/selectors';
+import { selectCards, selectPage } from 'redux/cards/selectors';
 import { getAllCardsThunk } from 'redux/cards/thunks';
 import { selectError, selectIsLoading } from 'redux/root/selectors';
 
@@ -9,10 +9,11 @@ export const useCatalog = () => {
   const cards = useSelector(selectCards);
   const error = useSelector(selectError);
   const isLoading = useSelector(selectIsLoading);
+  const page = useSelector(selectPage);
 
   useEffect(() => {
-    dispatch(getAllCardsThunk());
-  }, [dispatch]);
+    dispatch(getAllCardsThunk(page));
+  }, [dispatch, page]);
 
   return { error, isLoading, cards };
 };

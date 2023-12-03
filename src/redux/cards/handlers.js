@@ -1,5 +1,5 @@
 export const handleAllCards = (state, { payload }) => {
-  state.data = payload;
+  state.data = [...state.data, ...payload];
 };
 
 export const handleSingleCard = (state, { payload }) => {

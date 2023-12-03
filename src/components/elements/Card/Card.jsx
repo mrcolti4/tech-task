@@ -10,16 +10,21 @@ const Card = ({ data }) => {
 
   const onClick = () => setIsFavorite(!isFavorite);
 
-  const string =
-    'Kiev Ukraine LuxuryCarRentals Premium Suv Enclave 9582 Powerliftgate';
+  const tags = [
+    ...data?.address.split(',').splice(1),
+    data?.rentalCompany,
+    data?.type,
+    data?.model,
+    data?.id,
+  ];
 
   return (
     <div className="w-[274px]">
       <div className="mb-7">
         <div className="relative">
           <img
-            src="https://res.cloudinary.com/ditdqzoio/image/upload/v1687252635/cars/volvo_xc90.jpg"
-            alt="car"
+            src={data?.img}
+            alt={data?.make}
             className="h-cardImg rounded-[14px] mb-[14px]"
           />
           <button
@@ -31,11 +36,15 @@ const Card = ({ data }) => {
           </button>
         </div>
         <Heading className="flex justify-between mb-[8px]">
-          Lorem, ipsum dolor. <span>$40</span>
+          <div>
+            {data?.make} <span className="text-primary">{data?.model}</span>,{' '}
+            {data?.year}
+          </div>{' '}
+          <span>{data?.rentalPrice}</span>
         </Heading>
         <div className="flex flex-wrap">
-          {string.split(' ').map(word => (
-            <Tag>{word}</Tag>
+          {tags.map((word, index) => (
+            <Tag key={index}>{word}</Tag>
           ))}
         </div>
       </div>

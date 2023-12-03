@@ -5,11 +5,20 @@ import { handleAllCards, handleSingleCard } from './handlers';
 const initialState = {
   data: [],
   singleCard: {},
+  page: 1,
 };
 
 const cardsSlice = createSlice({
   name: 'cards',
   initialState,
+  reducers: {
+    incrementPage(state) {
+      state.page += 1;
+    },
+    resetPage(state) {
+      state.page = 1;
+    },
+  },
   extraReducers: builder =>
     builder
       .addCase(getAllCardsThunk.fulfilled, handleAllCards)
@@ -17,3 +26,4 @@ const cardsSlice = createSlice({
 });
 
 export const cardsReducer = cardsSlice.reducer;
+export const { incrementPage, resetPage } = cardsSlice.actions;
