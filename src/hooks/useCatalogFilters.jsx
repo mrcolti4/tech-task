@@ -14,7 +14,7 @@ const filterByMileage = (data, filtersObj) => {
 };
 
 const filterByBrand = (data, filtersObj) => {
-  const result = data.filter(card => card.make.includes(filtersObj.brand));
+  const result = data.filter(card => card.make === filtersObj.brand);
   delete filtersObj.brand;
 
   return result;
