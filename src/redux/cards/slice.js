@@ -5,6 +5,12 @@ import { handleAllCards, handleSingleCard } from './handlers';
 const initialState = {
   data: [],
   favorites: [],
+  filters: {
+    brand: '',
+    price: '',
+    from: '',
+    to: '',
+  },
   page: 1,
   limit: 12,
   isNoMoreData: false,
@@ -29,6 +35,9 @@ const cardsSlice = createSlice({
         state.favorites.push(payload);
       }
     },
+    setFilters(state, { payload }) {
+      state.filters = payload;
+    },
   },
   extraReducers: builder =>
     builder
@@ -37,4 +46,5 @@ const cardsSlice = createSlice({
 });
 
 export const cardsReducer = cardsSlice.reducer;
-export const { incrementPage, resetPage, addToFavorites } = cardsSlice.actions;
+export const { incrementPage, resetPage, addToFavorites, setFilters } =
+  cardsSlice.actions;

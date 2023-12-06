@@ -1,17 +1,20 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 
-import brands from '../../../makes.json';
+import { setFilters } from 'redux/cards/slice';
+
 import Select from 'components/elements/form/Select/Select';
 import Input from 'components/elements/form/Input/Input';
 import Label from 'components/elements/form/Label/Label';
 import Button from 'components/elements/Button/Button';
 
-const CardFilter = ({ setFilters }) => {
+import { selectAllBrands, selectAllPrices } from 'redux/cards/selectors';
+
+const CardFilter = () => {
+  const dispatch = useDispatch();
+  const brands = useSelector(selectAllBrands);
+  const prices = useSelector(selectAllPrices);
   const { register, handleSubmit } = useForm();
-  const prices = [];
-  for (let i = 10; i < 500; i += 10) {
-    prices.push(i);
-  }
 
   return (
     <form className="flex gap-[18px] items-end justify-center mb-[50px] mx-auto">
@@ -30,7 +33,7 @@ const CardFilter = ({ setFilters }) => {
         Price/ 1 hour
         <Select register={register('price')} className="w-[125px] bg-[80px]">
           <option value="">To: </option>
-          {prices.map(price => (
+          {prices?.map(price => (
             <option key={price} value={price}>
               {price}
             </option>
@@ -45,7 +48,7 @@ const CardFilter = ({ setFilters }) => {
             placeholder="From: "
             type="number"
             pattern="[0-9]*"
-            register={register('fromMileage')}
+            register={register('from')}
           />
           <span className="after:absolute after:content-[''] after:inline-block after:w-[1px] after:h-[52px] after:bg-gray-20 after:bottom-[0px]" />
           <Input
@@ -53,12 +56,12 @@ const CardFilter = ({ setFilters }) => {
             placeholder="To: "
             type="number"
             pattern="[0-9]*"
-            register={register('toMileage')}
+            register={register('to')}
           />
         </div>
       </Label>
       <Button
-        onClick={handleSubmit(data => setFilters(data))}
+        onClick={handleSubmit(data => dispatch(setFilters(data)))}
         type="button"
         className="w-[136px] h-[48px]"
       >

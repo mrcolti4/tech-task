@@ -1,14 +1,15 @@
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { selectFilters } from 'redux/cards/selectors';
 
 const filterByMileage = (data, filtersObj) => {
   const result = data.filter(
     card =>
-      card.mileage < Number(filtersObj.toMileage || '10000') &&
-      card.mileage > Number(filtersObj.fromMileage || '0')
+      card.mileage < Number(filtersObj.to || '10000') &&
+      card.mileage > Number(filtersObj.from || '0')
   );
 
-  delete filtersObj.toMileage;
-  delete filtersObj.fromMileage;
+  delete filtersObj.to;
+  delete filtersObj.from;
 
   return result;
 };
@@ -22,7 +23,7 @@ const filterByBrand = (data, filtersObj) => {
 
 const filterByPrice = (data, filtersObj) => {
   const result = data.filter(
-    card => Number(card.rentalPrice.slice(1)) >= Number(filtersObj.price)
+    card => Number(card.rentalPrice.slice(1)) <= Number(filtersObj.price)
   );
   delete filtersObj.price;
 
@@ -30,25 +31,25 @@ const filterByPrice = (data, filtersObj) => {
 };
 
 export const useCatalogFilters = data => {
-  const [filters, setFilters] = useState({});
+  const filters = useSelector(selectFilters);
   const copiedFilters = { ...filters };
   let filteredData = [];
   if (Object.values(filters).every(filter => filter === '')) {
     filteredData = data;
-    return { data: filteredData, filters, setFilters };
+    return { data: filteredData };
   }
 
   for (const filter in copiedFilters) {
-    if (!filters[filter]) {
+    if (!copiedFilters[filter]) {
       continue;
     }
-    if (filters.brand) {
+    if (copiedFilters.brand) {
       filteredData.push(...filterByBrand(data, copiedFilters));
     }
-    if (filters.price) {
+    if (copiedFilters.price) {
       filteredData.push(...filterByPrice(data, copiedFilters));
     }
-    if (filters.toMileage || filters.fromMileage) {
+    if (copiedFilters.to || copiedFilters.from) {
       filteredData.push(...filterByMileage(data, copiedFilters));
     }
   }
@@ -57,5 +58,5 @@ export const useCatalogFilters = data => {
     (item, index, arr) => arr.indexOf(item) === index
   );
 
-  return { data: uniqueData, filters, setFilters };
+  return { data: uniqueData };
 };
