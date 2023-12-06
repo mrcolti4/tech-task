@@ -4,8 +4,8 @@ import { selectFilters } from 'redux/cards/selectors';
 const filterByMileage = (data, filtersObj) => {
   const result = data.filter(
     card =>
-      card.mileage < Number(filtersObj.to || '10000') &&
-      card.mileage > Number(filtersObj.from || '0')
+      card.mileage < Number(filtersObj.to.split(',').join('') || '10000') &&
+      card.mileage > Number(filtersObj.from.split(',').join('') || '0')
   );
 
   delete filtersObj.to;
