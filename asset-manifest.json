@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/tech-task/static/css/main.bf9135bb.css",
-    "main.js": "/tech-task/static/js/main.ce1da0ca.js",
+    "main.css": "/tech-task/static/css/main.e4253101.css",
+    "main.js": "/tech-task/static/js/main.446187e1.js",
     "static/js/983.76eec116.chunk.js": "/tech-task/static/js/983.76eec116.chunk.js",
-    "static/js/697.24521434.chunk.js": "/tech-task/static/js/697.24521434.chunk.js",
-    "static/js/991.1a35d978.chunk.js": "/tech-task/static/js/991.1a35d978.chunk.js",
+    "static/js/697.bfd8cbc6.chunk.js": "/tech-task/static/js/697.bfd8cbc6.chunk.js",
+    "static/js/991.f08547e1.chunk.js": "/tech-task/static/js/991.f08547e1.chunk.js",
     "static/js/134.3268b35d.chunk.js": "/tech-task/static/js/134.3268b35d.chunk.js",
     "static/media/bg-home.jpg": "/tech-task/static/media/bg-home.66f569a773992eba46f6.jpg",
     "index.html": "/tech-task/index.html",
     "static/media/sprite.svg": "/tech-task/static/media/sprite.58d724df96799ce4f52b47595d3883ff.svg",
     "static/media/chevron-down.svg": "/tech-task/static/media/chevron-down.24cd320d509ea2ebbeb4.svg",
-    "main.bf9135bb.css.map": "/tech-task/static/css/main.bf9135bb.css.map",
-    "main.ce1da0ca.js.map": "/tech-task/static/js/main.ce1da0ca.js.map",
+    "main.e4253101.css.map": "/tech-task/static/css/main.e4253101.css.map",
+    "main.446187e1.js.map": "/tech-task/static/js/main.446187e1.js.map",
     "983.76eec116.chunk.js.map": "/tech-task/static/js/983.76eec116.chunk.js.map",
-    "697.24521434.chunk.js.map": "/tech-task/static/js/697.24521434.chunk.js.map",
-    "991.1a35d978.chunk.js.map": "/tech-task/static/js/991.1a35d978.chunk.js.map",
+    "697.bfd8cbc6.chunk.js.map": "/tech-task/static/js/697.bfd8cbc6.chunk.js.map",
+    "991.f08547e1.chunk.js.map": "/tech-task/static/js/991.f08547e1.chunk.js.map",
     "134.3268b35d.chunk.js.map": "/tech-task/static/js/134.3268b35d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bf9135bb.css",
-    "static/js/main.ce1da0ca.js"
+    "static/css/main.e4253101.css",
+    "static/js/main.446187e1.js"
   ]
 }
