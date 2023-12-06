@@ -42,22 +42,17 @@ const CardFilter = () => {
       </Label>
       <Label className="relative">
         Car mileage / km
-        <div>
+        <div className="flex">
           <Input
-            className="rounded-e-none"
-            placeholder="From: "
-            type="number"
-            pattern="[0-9]*"
+            className="rounded-e-none pl-[65px]"
             register={register('from')}
-          />
-          <span className="after:absolute after:content-[''] after:inline-block after:w-[1px] after:h-[52px] after:bg-gray-20 after:bottom-[0px]" />
-          <Input
-            className="rounded-s-none"
-            placeholder="To: "
-            type="number"
-            pattern="[0-9]*"
-            register={register('to')}
-          />
+          >
+            From:
+          </Input>
+          <span className="after:absolute after:content-[''] after:inline-block after:w-[1px] after:h-[48px] after:bg-gray-20 after:z-10 after:bottom-[0px]" />
+          <Input className="rounded-s-none pl-[45px]" register={register('to')}>
+            To:
+          </Input>
         </div>
       </Label>
       <Button
