@@ -1,14 +1,15 @@
 import { useContext } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Modal from 'components/widgets/Modal/Modal';
+import AccentWord from 'components/elements/AccentWord/AccentWord';
 
 import Heading from '../../elements/Heading/Heading';
 import Tag from '../../elements/Tag/Tag';
 import Button from '../../elements/Button/Button';
 import Favorite from '../../elements/Favorite/Favorite';
-
 import { ModalContext } from '../../elements/ModalContext';
-import { useDispatch, useSelector } from 'react-redux';
+
 import { addToFavorites } from 'redux/cards/slice';
 import { selectFavorites } from 'redux/cards/selectors';
 
@@ -19,12 +20,25 @@ const Card = ({ data }) => {
 
   const toggleModal = useContext(ModalContext);
 
+  const {
+    id,
+    img,
+    make,
+    model,
+    year,
+    rentalPrice,
+    address,
+
+    type,
+    rentalCompany,
+  } = data;
+
   const tags = [
-    ...data?.address.split(',').splice(1),
-    data?.rentalCompany,
-    data?.type,
-    data?.model,
-    data?.id,
+    ...address.split(',').splice(1),
+    rentalCompany,
+    type,
+    model,
+    id,
   ];
 
   const onClick = () => {
@@ -36,8 +50,8 @@ const Card = ({ data }) => {
       <div className="mb-7">
         <div className="relative">
           <img
-            src={data?.img}
-            alt={data?.make}
+            src={img}
+            alt={make}
             className="h-cardImg rounded-[14px] mb-[14px]"
           />
           <button
@@ -50,13 +64,10 @@ const Card = ({ data }) => {
         </div>
         <Heading className="flex justify-between mb-[8px]">
           <div>
-            {data?.make}{' '}
-            {data?.model.length < 8 && (
-              <span className="text-primary">{data?.model}</span>
-            )}
-            , {data?.year}
+            {make} {model.length < 8 && <AccentWord>{model}</AccentWord>},{' '}
+            {year}
           </div>{' '}
-          <span>{data?.rentalPrice}</span>
+          <span>{rentalPrice}</span>
         </Heading>
         <div className="flex flex-wrap">
           {tags.map((word, index) => (
