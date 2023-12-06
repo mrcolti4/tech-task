@@ -17,6 +17,24 @@ module.exports = {
         home: "url('./components/assets/bg-home.jpg')",
         select: "url('./components/assets/chevron-down.svg')",
       },
+      keyframes: {
+        progressFirst: {
+          '0%': { left: '-35%', right: '100%' },
+          '60%': { left: '100%', right: '-90%' },
+          '100%': { left: '100%', right: '-90%' },
+        },
+        progressSecond: {
+          '0%': { left: '-200%', right: '100%' },
+          '60%': { left: '107%', right: '-8%' },
+          '100%': { left: '107%', right: '-8%' },
+        },
+      },
+      animation: {
+        mainLoader:
+          'progressFirst 2s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite',
+        subLoader:
+          'progressSecond 2s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite',
+      },
     },
     colors: {
       primary: '#3470FF',
