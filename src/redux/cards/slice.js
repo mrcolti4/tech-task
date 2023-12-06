@@ -5,7 +5,6 @@ import { handleAllCards, handleSingleCard } from './handlers';
 const initialState = {
   data: [],
   favorites: [],
-  singleCard: {},
   page: 1,
   limit: 12,
   isNoMoreData: false,
