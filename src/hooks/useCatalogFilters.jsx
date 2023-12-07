@@ -2,7 +2,6 @@ import { useSelector } from 'react-redux';
 import { selectFilters } from 'redux/cards/selectors';
 
 const filterByMileage = (data, filtersObj) => {
-  console.log(filtersObj);
   const result = data.filter(
     card =>
       card.mileage < Number(filtersObj.to?.split(',').join('') || '10000') &&
