@@ -1,4 +1,8 @@
 export const handleAllCards = (state, { payload }) => {
+  if (state.page === 1) {
+    state.data = payload;
+    return;
+  }
   if (state.limit > payload.length) {
     state.isNoMoreData = true;
   }

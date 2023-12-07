@@ -17,8 +17,3 @@ export const selectAllPrices = createSelector([selectCards], cards => {
   if (maxPrice !== -Infinity)
     return [...Array(Math.ceil(maxPrice / 10)).keys()].map(i => (i + 1) * 10);
 });
-
-export const selectFilteredCards = createSelector(
-  [selectCards, selectFilters],
-  (cards, filters) => {}
-);

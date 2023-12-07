@@ -13,16 +13,3 @@ export const getAllCardsThunk = createAsyncThunk(
     }
   }
 );
-
-export const getSingleCardThunk = createAsyncThunk(
-  'cards/getSingle',
-  async (id, { rejectWithValue }) => {
-    try {
-      const data = await cardsApi.getSingleCard(id);
-
-      return data;
-    } catch (error) {
-      rejectWithValue(error.message);
-    }
-  }
-);

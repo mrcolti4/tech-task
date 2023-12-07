@@ -12,15 +12,8 @@ const getAllCards = async page => {
   return data;
 };
 
-const getSingleCard = async id => {
-  const { data } = await instance.get(`adverts/${id}`);
-
-  return data;
-};
-
 const cardsApi = {
   getAllCards,
-  getSingleCard,
 };
 
 export default cardsApi;

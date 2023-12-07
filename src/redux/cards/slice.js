@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getAllCardsThunk, getSingleCardThunk } from './thunks';
-import { handleAllCards, handleSingleCard } from './handlers';
+import { getAllCardsThunk } from './thunks';
+import { handleAllCards } from './handlers';
 
 const initialState = {
   data: [],
@@ -40,9 +40,7 @@ const cardsSlice = createSlice({
     },
   },
   extraReducers: builder =>
-    builder
-      .addCase(getAllCardsThunk.fulfilled, handleAllCards)
-      .addCase(getSingleCardThunk.fulfilled, handleSingleCard),
+    builder.addCase(getAllCardsThunk.fulfilled, handleAllCards),
 });
 
 export const cardsReducer = cardsSlice.reducer;
