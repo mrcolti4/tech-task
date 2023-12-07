@@ -1,10 +1,7 @@
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { selectFilters } from 'redux/cards/selectors';
+import { useSetDefFiltersVal } from 'hooks/useSetDefFiltersVal';
 
 const Input = ({ children, className = '', register, setValue }) => {
-  const fieldName = register.name;
-  const filters = useSelector(selectFilters);
+  const { fieldName } = useSetDefFiltersVal(register, setValue);
   const handleChange = ({ target: { value } }) => {
     let num = value.replace(/\D/g, '');
     if (num.length > 3) {
@@ -12,10 +9,6 @@ const Input = ({ children, className = '', register, setValue }) => {
     }
     setValue(fieldName, num);
   };
-
-  useEffect(() => {
-    setValue(fieldName, filters[fieldName]);
-  }, [setValue, filters, fieldName]);
 
   return (
     <div className="relative text-dark-100 font-medium">

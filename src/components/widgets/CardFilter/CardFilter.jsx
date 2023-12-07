@@ -2,11 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 
 import { setFilters } from 'redux/cards/slice';
-import {
-  selectAllBrands,
-  selectAllPrices,
-  selectFilters,
-} from 'redux/cards/selectors';
+import { selectAllBrands, selectAllPrices } from 'redux/cards/selectors';
 
 import Select from 'components/elements/form/Select/Select';
 import Input from 'components/elements/form/Input/Input';
@@ -17,7 +13,6 @@ const CardFilter = () => {
   const dispatch = useDispatch();
   const brands = useSelector(selectAllBrands);
   const prices = useSelector(selectAllPrices);
-  const filters = useSelector(selectFilters);
   const { register, handleSubmit, setValue } = useForm();
 
   return (
@@ -27,7 +22,7 @@ const CardFilter = () => {
         <Select
           register={register('brand')}
           className="w-[224px] bg-[180px]"
-          defaultValue={filters.brand}
+          setValue={setValue}
         >
           <option value="">Enter the text</option>
           {brands.map(brand => (
@@ -42,7 +37,7 @@ const CardFilter = () => {
         <Select
           register={register('price')}
           className="w-[125px] bg-[80px]"
-          defaultValue={filters.price}
+          setValue={setValue}
         >
           <option value="">To: </option>
           {prices?.map(price => (
