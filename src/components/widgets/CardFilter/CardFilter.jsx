@@ -73,14 +73,18 @@ const CardFilter = () => {
         </div>
       </Label>
       <Button
-        onClick={handleSubmit(data => {
-          console.log(data);
-          dispatch(setFilters(data));
-        })}
+        onClick={handleSubmit(data => dispatch(setFilters(data)))}
         type="button"
-        className="w-[136px] h-[48px]"
+        className="py-[12px] px-[41px]"
       >
         Search
+      </Button>
+      <Button
+        type="button"
+        onClick={() => dispatch(setFilters({}))}
+        className="py-[12px] px-[41px]"
+      >
+        Clear filters
       </Button>
     </form>
   );
