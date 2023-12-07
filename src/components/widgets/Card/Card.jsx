@@ -13,6 +13,8 @@ import { ModalContext } from '../../elements/ModalContext';
 import { addToFavorites } from 'redux/cards/slice';
 import { selectFavorites } from 'redux/cards/selectors';
 
+import NoImage from '../../assets/no-image.png';
+
 const Card = ({ data }) => {
   const dispatch = useDispatch();
   const favorites = useSelector(selectFavorites);
@@ -52,7 +54,8 @@ const Card = ({ data }) => {
           <img
             src={img}
             alt={make}
-            className="h-cardImg rounded-[14px] mb-[14px]"
+            className="h-cardImg rounded-[14px] mb-[14px] object-cover"
+            onError={e => (e.target.src = NoImage)}
           />
           <button
             onClick={onClick}
